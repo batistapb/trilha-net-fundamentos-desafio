@@ -38,9 +38,11 @@ namespace DesafioFundamentos.Models
                 Console.WriteLine("Digite quantas horas você ficou estacionado: ");
                 horas = Convert.ToInt32(Console.ReadLine()); 
                 valorTotal = precoInicial + (precoPorHora * horas);
-                // TODO: Remover a placa digitada da lista de veículos
-                // *IMPLEMENTE AQUI*
-
+            
+                if (veiculos.Contains(placa))
+                {
+                    veiculos.Remove(placa);
+                }
                 Console.WriteLine($"O veículo {placa} foi removido e o preço total foi de: R$ {valorTotal}");
             }
             else
